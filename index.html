@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Hub untuk Pelajar - 30 Alat Terbaik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #4F46E5, #9333EA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-graduation-cap text-indigo-600 text-2xl"></i>
+                    <span class="font-bold text-xl tracking-tight">Student<span class="text-indigo-600">AI</span></span>
+                </div>
+                <div class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
+                    <a href="#" class="hover:text-indigo-600">Beranda</a>
+                    <a href="#tools" class="hover:text-indigo-600">Daftar AI</a>
+                    <a href="#about" class="hover:text-indigo-600">Tentang</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative py-16 px-4 overflow-hidden bg-white">
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6">
+                Guru online yang dapat membantu kamu <br><span class="gradient-text">Di SMAN 1 Citeureup</span>
+            </h1>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-10">
+                Koleksi 30 alat AI terbaik yang dirancang khusus untuk membantu pelajar dalam menulis, riset, matematika, hingga produktivitas.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#tools" class="px-8 py-3 bg-indigo-600 text-white rounded-full font-semibold hover:bg-indigo-700 transition">Lihat Semua AI</a>
+                <div class="relative">
+                    <input type="text" id="searchInput" placeholder="Cari AI (misal: Matematika)..." class="w-64 md:w-80 px-5 py-3 rounded-full border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-sm">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="tools" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap justify-center gap-2 mb-12" id="filterContainer">
+            <button class="filter-btn active px-5 py-2 rounded-full bg-indigo-100 text-indigo-700 font-medium" data-filter="all">Semua</button>
+            <button class="filter-btn px-5 py-2 rounded-full bg-white border border-slate-200 hover:bg-slate-100 transition" data-filter="Menulis">Menulis</button>
+            <button class="filter-btn px-5 py-2 rounded-full bg-white border border-slate-200 hover:bg-slate-100 transition" data-filter="Matematika">Matematika & Sains</button>
+            <button class="filter-btn px-5 py-2 rounded-full bg-white border border-slate-200 hover:bg-slate-100 transition" data-filter="Riset">Riset</button>
+            <button class="filter-btn px-5 py-2 rounded-full bg-white border border-slate-200 hover:bg-slate-100 transition" data-filter="Desain">Desain & PPT</button>
+            <button class="filter-btn px-5 py-2 rounded-full bg-white border border-slate-200 hover:bg-slate-100 transition" data-filter="Bahasa">Bahasa</button>
+        </div>
+
+        <!-- AI Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="aiGrid">
+            <!-- Cards will be injected by JavaScript -->
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-slate-500 text-sm mb-4">© 2024 StudentAI Hub. Dibuat untuk masa depan pendidikan.</p>
+            <div class="flex justify-center gap-6">
+                <a href="#" class="text-slate-400 hover:text-indigo-600"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="#" class="text-slate-400 hover:text-indigo-600"><i class="fab fa-github text-xl"></i></a>
+                <a href="#" class="text-slate-400 hover:text-indigo-600"><i class="fab fa-instagram text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const aiTools = [
+            { name: "ChatGPT", category: "Menulis", desc: "AI serbaguna untuk menjawab pertanyaan, membuat essay, dan menjelaskan konsep rumit.", url: "https://chat.openai.com", icon: "fa-robot" },
+            { name: "Perplexity AI", category: "Riset", desc: "Mesin pencari bertenaga AI yang memberikan jawaban lengkap beserta sumber referensinya.", url: "https://www.perplexity.ai", icon: "fa-search" },
+            { name: "WolframAlpha", category: "Matematika", desc: "Ahli dalam komputasi matematika, fisika, dan analisis data tingkat lanjut.", url: "https://www.wolframalpha.com", icon: "fa-calculator" },
+            { name: "Quillbot", category: "Menulis", desc: "Alat parafrase terbaik untuk menulis ulang kalimat agar lebih formal dan tidak terdeteksi plagiasi.", url: "https://quillbot.com", icon: "fa-pen-nib" },
+            { name: "Grammarly", category: "Menulis", desc: "Mengecek tata bahasa, ejaan, dan nada tulisan dalam bahasa Inggris secara akurat.", url: "https://www.grammarly.com", icon: "fa-spell-check" },
+            { name: "Gamma App", category: "Desain", desc: "Membuat presentasi (PPT), dokumen, dan landing page hanya dari satu baris teks perintah.", url: "https://gamma.app", icon: "fa-file-powerpoint" },
+            { name: "ChatPDF", category: "Riset", desc: "Unggah dokumen PDF dan ajukan pertanyaan langsung ke dokumen tersebut.", url: "https://www.chatpdf.com", icon: "fa-file-pdf" },
+            { name: "Canva Magic Design", category: "Desain", desc: "Desain grafis otomatis menggunakan AI untuk poster, tugas, dan presentasi.", url: "https://www.canva.com", icon: "fa-palette" },
+            { name: "Photomath", category: "Matematika", desc: "Scan soal matematika dan dapatkan penjelasan langkah demi langkah secara instan.", url: "https://photomath.com", icon: "fa-camera" },
+            { name: "Duolingo Max", category: "Bahasa", desc: "Belajar bahasa asing dengan bantuan tutor AI untuk latihan percakapan real-time.", url: "https://www.duolingo.com", icon: "fa-language" },
+            { name: "Consensus", category: "Riset", desc: "Mesin pencari khusus jurnal ilmiah yang menjawab pertanyaan berdasarkan bukti riset.", url: "https://consensus.app", icon: "fa-microscope" },
+            { name: "DeepL Translate", category: "Bahasa", desc: "Penerjemah bahasa yang jauh lebih akurat dan natural dibandingkan alat standar lainnya.", url: "https://www.deepl.com", icon: "fa-globe" },
+            { name: "Socratic by Google", category: "Matematika", desc: "Aplikasi bantuan belajar untuk menemukan sumber daya terbaik dari web.", url: "https://socratic.org", icon: "fa-lightbulb" },
+            { name: "Tome", category: "Desain", desc: "AI storytelling yang membantu membuat slide presentasi naratif dengan cepat.", url: "https://tome.app", icon: "fa-book-open" },
+            { name: "Elicit", category: "Riset", desc: "Asisten riset AI yang membantu merangkum makalah dan mencari literatur yang relevan.", url: "https://elicit.org", icon: "fa-flask" },
+            { name: "Claude AI", category: "Menulis", desc: "Model AI yang cerdas dalam analisis teks panjang dan penulisan yang lebih manusiawi.", url: "https://claude.ai", icon: "fa-brain" },
+            { name: "Symbolab", category: "Matematika", desc: "Kalkulator langkah-demi-langkah untuk aljabar, kalkulus, dan statistik.", url: "https://www.symbolab.com", icon: "fa-square-root-variable" },
+            { name: "Hemingway Editor", category: "Menulis", desc: "Memastikan tulisan Anda padat, jelas, dan mudah dibaca oleh audiens.", url: "https://hemingwayapp.com", icon: "fa-feather" },
+            { name: "SlidesAI", category: "Desain", desc: "Extension Google Slides untuk mengubah teks panjang menjadi slide presentasi rapi.", url: "https://www.slidesai.io", icon: "fa-window-restore" },
+            { name: "Character.ai", category: "Bahasa", desc: "Latihan bahasa dengan karakter fiksi atau tokoh sejarah terkenal secara interaktif.", url: "https://character.ai", icon: "fa-comments" },
+            { name: "Mendeley", category: "Riset", desc: "Pengatur sitasi dan referensi otomatis untuk keperluan skripsi atau jurnal.", url: "https://www.mendeley.com", icon: "fa-quote-left" },
+            { name: "Explain Like I'm Five", category: "Riset", desc: "Menjelaskan topik ilmiah yang sangat rumit menjadi bahasa anak umur 5 tahun.", url: "https://elii5.com", icon: "fa-child" },
+            { name: "Zotero", category: "Riset", desc: "Alat open-source untuk mengumpulkan, mengelola, dan mengutip sumber riset.", url: "https://www.zotero.org", icon: "fa-folder-open" },
+            { name: "Anki", category: "Riset", desc: "Gunakan Flashcards bertenaga Spaced Repetition untuk menghafal materi ujian.", url: "https://apps.ankiweb.net", icon: "fa-layer-group" },
+            { name: "Jasper AI", category: "Menulis", desc: "Asisten penulisan konten yang kreatif untuk blog, tugas kreatif, dan marketing.", url: "https://www.jasper.ai", icon: "fa-wand-magic-sparkles" },
+            { name: "Scholarcy", category: "Riset", desc: "Membaca dan merangkum artikel jurnal yang panjang menjadi poin-poin singkat.", url: "https://www.scholarcy.com", icon: "fa-file-alt" },
+            { name: "Descript", category: "Desain", desc: "Edit audio dan video semudah mengedit teks dokumen, cocok untuk tugas video.", url: "https://www.descript.com", icon: "fa-clapperboard" },
+            { name: "Otter.ai", category: "Menulis", desc: "Merekam suara dosen dan mengubahnya menjadi catatan teks (transkrip) secara otomatis.", url: "https://otter.ai", icon: "fa-microphone" },
+            { name: "Brainly AI", category: "Matematika", desc: "Komunitas belajar dengan fitur AI untuk memecahkan soal sekolah tersulit.", url: "https://brainly.co.id", icon: "fa-users" },
+            { name: "Bing Image Creator", category: "Desain", desc: "Membuat gambar ilustrasi untuk presentasi hanya dengan deskripsi kata-kata.", url: "https://www.bing.com/create", icon: "fa-image" }
+        ];
+
+        const aiGrid = document.getElementById('aiGrid');
+        const searchInput = document.getElementById('searchInput');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+        function renderCards(filter = 'all', search = '') {
+            aiGrid.innerHTML = '';
+            
+            const filtered = aiTools.filter(item => {
+                const matchesFilter = filter === 'all' || item.category.includes(filter);
+                const matchesSearch = item.name.toLowerCase().includes(search.toLowerCase()) || 
+                                     item.desc.toLowerCase().includes(search.toLowerCase());
+                return matchesFilter && matchesSearch;
+            });
+
+            if(filtered.length === 0) {
+                aiGrid.innerHTML = '<div class="col-span-full py-12 text-center text-slate-400">Tidak menemukan AI yang cocok...</div>';
+                return;
+            }
+
+            filtered.forEach(tool => {
+                const card = `
+                    <div class="glass-card p-6 rounded-2xl border border-slate-200 flex flex-col h-full">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600">
+                                <i class="fa-solid ${tool.icon} text-xl"></i>
+                            </div>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-full uppercase tracking-wider">${tool.category}</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">${tool.name}</h3>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow leading-relaxed">${tool.desc}</p>
+                        <a href="${tool.url}" target="_blank" class="w-full py-3 bg-slate-900 text-white text-center rounded-xl font-semibold hover:bg-indigo-600 transition flex items-center justify-center gap-2">
+                            Coba Sekarang <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
+                    </div>
+                `;
+                aiGrid.innerHTML += card;
+            });
+        }
+
+        searchInput.addEventListener('input', (e) => {
+            const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+            renderCards(activeFilter, e.target.value);
+        });
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update UI
+                filterBtns.forEach(b => b.classList.remove('active', 'bg-indigo-100', 'text-indigo-700'));
+                filterBtns.forEach(b => b.classList.add('bg-white', 'border-slate-200'));
+                
+                btn.classList.add('active', 'bg-indigo-100', 'text-indigo-700');
+                btn.classList.remove('bg-white', 'border-slate-200');
+
+                // Filter logic
+                renderCards(btn.dataset.filter, searchInput.value);
+            });
+        });
+
+        // Initial Render
+        window.onload = () => renderCards();
+    </script>
+</body>
+</html>
